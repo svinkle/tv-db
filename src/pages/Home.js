@@ -14,7 +14,7 @@ class Home extends Component {
     super();
 
     // An array of show `id`s which is used to populate the homepage
-    this.watching = [526, 587, 431, 82, 73, 83, 60, 13417, 120];
+    this.watching = [526, 587, 431, 82, 73, 83];
   }
 
   componentDidMount() {
@@ -31,23 +31,39 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container" tabIndex="-1" aria-labelledby="pageTitle" ref={(container) => { this.container = container; }}>
-        <Header/>
+      <div
+        className="container"
+        tabIndex="-1"
+        aria-labelledby="pageTitle"
+        ref={container => {
+          this.container = container;
+        }}
+      >
+        <Header />
         <main className="main">
-          <h1 id="pageTitle" className="heading heading--1 home__title center">Search <span className="logo">TV-Db</span> for your favourite TV shows!</h1>
+          <h1 id="pageTitle" className="heading heading--1 home__title center">
+            Search <span className="logo">TV-Db</span> for your favourite TV
+            shows!
+          </h1>
           <Search history={this.props.history} />
-          <h2 className="heading heading--2 center">Check out what we're watching!</h2>
+          <h2 className="heading heading--2 center">
+            Check out what we're watching!
+          </h2>
           {/*
             Iterate over the `watching` array and output show links in a list
             via `<Show/>` component, passing `showId` prop
           */}
           <ul className="show__list">
-            {this.watching.map((show) => {
-              return <li className="show__list-item" key={show}><Show showId={show}/></li>;
+            {this.watching.map(show => {
+              return (
+                <li className="show__list-item" key={show}>
+                  <Show showId={show} />
+                </li>
+              );
             })}
           </ul>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

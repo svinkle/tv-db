@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TV-Db",
+  "name": "Accessible React App Demo",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "images/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     }

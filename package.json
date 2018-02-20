@@ -18,10 +18,8 @@
     "build": "npm run build-css && react-scripts build && npm run autoprefixer",
     "start-js": "react-scripts start",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "autoprefixer":
-      "postcss build/static/css/*.css --use autoprefixer -o build/static/css/*.css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "autoprefixer": "postcss build/static/css/*.css --use autoprefixer -o build/static/css/*.css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
