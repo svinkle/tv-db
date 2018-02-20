@@ -14,7 +14,7 @@ class Home extends Component {
     super();
 
     // An array of show `id`s which is used to populate the homepage
-    this.watching = [526, 587, 431, 82, 73, 83];
+    this.watching = [526, 587, 431, 82, 73, 83, 582, 379, 538];
   }
 
   componentDidMount() {
