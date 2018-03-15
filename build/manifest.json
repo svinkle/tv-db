@@ -8,7 +8,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./tv-db/",
+  "start_url": "https://svinkle.github.io/tv-db/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
