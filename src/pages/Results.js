@@ -33,7 +33,7 @@ class Results extends Component {
     const q = this.props.match.params.q;
 
     // Update the `title` element text
-    document.title = `Search Results for "${q}" | TV-Db`;
+    document.title = 'Loading… | TV-Db';
 
     // Go and get the data via `fetchShowData()` method
     this.fetchShowData(q);
@@ -59,7 +59,15 @@ class Results extends Component {
           // Once we have the data, set it to the `results` state property
           // and update the `loading` property, `q` property, and
           // `announcementMessage` property
-          this.setState({loading: false, results: data, q: q, announcementMessage: `Total results found: ${data.length}`});
+          this.setState({
+            loading: false,
+            results: data,
+            q: q,
+            announcementMessage: `Total results found: ${data.length}`
+          });
+
+          // Update the `title` element text
+          document.title = `Search Results for "${q}" | TV-Db`;
 
           // Set focus to the content container after the data has been fetched
           // Note: this happens _after_ setting the `loading` state property,
@@ -77,33 +85,44 @@ class Results extends Component {
     // Show the loading screen only if the current state of the `loading`
     // property retirns `true`
     if (this.state.loading) {
-      return (<Loader/>);
+      return <Loader />;
     }
 
     return (
-      <div className="container" aria-labelledby="pageTitle" tabIndex="-1" ref={(container) => {
-        this.container = container;
-      }}>
-        <Header/>
+      <div
+        className="container"
+        aria-labelledby="pageTitle"
+        tabIndex="-1"
+        ref={container => {
+          this.container = container;
+        }}
+      >
+        <Header />
         {/*
           Announce any changes to the `announcementMessage` state property
         */}
-        <Announcements message={this.state.announcementMessage}/>
+        <Announcements message={this.state.announcementMessage} />
 
         <main className="main">
-          <h1 id="pageTitle" className="heading heading--1">Search Results for "{this.state.q}":</h1>
+          <h1 id="pageTitle" className="heading heading--1">
+            Search Results for "{this.state.q}":
+          </h1>
           {/*
             Iterate over the data and output show links in a list via `<Show/>`
             component, passing the `id` via `showId` prop
           */}
           <ul className="show__list">
-            {this.state.results.map((show) => {
-              return <li className="show__list-item" key={show.show.id}><Show showId={show.show.id}/></li>;
+            {this.state.results.map(show => {
+              return (
+                <li className="show__list-item" key={show.show.id}>
+                  <Show showId={show.show.id} />
+                </li>
+              );
             })}
           </ul>
         </main>
 
-        <Footer/>
+        <Footer />
       </div>
     );
   }

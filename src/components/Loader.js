@@ -19,18 +19,29 @@ class Loading extends Component {
   render() {
     return (
       <div className="container">
-        <Header/>
+        <Header />
         <main className="main">
           {/*
             Need to create a ref to the `div` element here in order to
             set focus on this container within the `componentDidMount()`
             lifecycle method
           */}
-          <div className="loader" tabIndex="-1" aria-label="Loading…" ref={(loader) => { this.loader = loader; }}>
-            <img src={`${process.env.PUBLIC_URL}/images/loading.gif`} alt="" className="loader__image" />
+          <div
+            className="loader"
+            tabIndex="-1"
+            aria-label="Loading…"
+            ref={loader => {
+              this.loader = loader;
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/images/loading.gif`}
+              alt=""
+              className="loader__image"
+            />
           </div>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     );
   }
