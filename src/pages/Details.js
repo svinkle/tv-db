@@ -105,7 +105,7 @@ class Details extends Component {
               <img
                 src={
                   this.state.results.image
-                    ? this.state.results.image.medium
+                    ? this.state.results.image.medium.replace('http', 'https')
                     : `http://via.placeholder.com/210x295/000000/ffffff/?text=${
                       this.state.results.name
                     }`

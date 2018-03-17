@@ -275,7 +275,6 @@ p {
 .footer {
   border-top: solid LightGray 1px;
   color: Black;
-  font-size: .8rem;
   margin: 2rem 0 -1rem;
   padding-top: 1rem; }
   @media (min-width: 35rem) {

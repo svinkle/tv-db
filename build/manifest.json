@@ -1,11 +1,26 @@
 {
   "short_name": "TV-Db",
-  "name": "Accessible React App Demo",
+  "name": "Search TV-Db for your favourite TV shows!",
   "icons": [
     {
       "src": "images/favicon.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/favicon.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/tv-db/",

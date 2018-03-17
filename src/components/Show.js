@@ -64,12 +64,25 @@ class Show extends Component {
 
       // Return a <Link/> which takes advantage of React's virtual DOM, but
       // renders an accessible `<a>` element.
-      <Link to={`${process.env.PUBLIC_URL}/show/${this.state.results.id}`} className="show__link">
+      <Link
+        to={`${process.env.PUBLIC_URL}/show/${this.state.results.id}`}
+        className="show__link"
+      >
         {/*
           If there's no image available from the API, show a placeholder
           with the show name embedded; otherwise, show the cover image
         */}
-        <img src={this.state.results.image ? this.state.results.image.medium : `http://via.placeholder.com/210x295/000000/ffffff/?text=${this.state.results.name}`} alt={this.state.results.name} className="show__image" />
+        <img
+          src={
+            this.state.results.image
+              ? this.state.results.image.medium.replace('http', 'https')
+              : `http://via.placeholder.com/210x295/000000/ffffff/?text=${
+                this.state.results.name
+              }`
+          }
+          alt={this.state.results.name}
+          className="show__image"
+        />
       </Link>
     );
   }
