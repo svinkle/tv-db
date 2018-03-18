@@ -11,35 +11,22 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <p>
-          <span className="logo">TV-Db</span> &copy;{' '}
-          <a
-            href="https://svinkle.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Scott Vinkle
-          </a>.<br />This demo app is a component to the article,{' '}
-          <a
-            href="https://medium.com/@svinkle/creating-accessible-react-apps-38dc1c2775cf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <span className="logo">TV-Db</span> is{' '}
+          <span role="img" aria-label="coded">
+            ⌨️
+          </span>{' '}
+          with{' '}
+          <span role="img" aria-label="love">
+            ❤️
+          </span>{' '}
+          by <a href="https://twitter.com/svinkle/">@svinkle</a>. View the
+          source on <a href="https://github.com/svinkle/tv-db">GitHub</a>.{' '}
+          <br />This app is a demo component to the article{' '}
+          <a href="https://medium.com/@svinkle/creating-accessible-react-apps-38dc1c2775cf">
             Creating Accessible React Apps
-          </a>. View the{' '}
-          <a
-            href="https://github.com/svinkle/tv-db"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            source on GitHub
-          </a>. <br />Data, images, and content &copy;{' '}
-          <a
-            href="https://tvmaze.com/api"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            TVMaze.com
           </a>.
+          <br />Data, images, and content &copy;{' '}
+          <a href="https://tvmaze.com/api">TVMaze.com</a>.
         </p>
       </footer>
     );
