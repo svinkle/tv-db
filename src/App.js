@@ -62,14 +62,35 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app" ref={(app) => { this.app = app; }}>
-        <Route basename={'/td-db/'} render={({location}) => (
-          <Switch key={location.key} location={location}>
-            <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} key={location.key}/>
-            <Route path={`${process.env.PUBLIC_URL}/results/:q`} component={Results} key={location.key}/>
-            <Route path={`${process.env.PUBLIC_URL}/show/:id`} component={Details} key={location.key}/>
-          </Switch>
-        )}/>
+      <div
+        className="app"
+        ref={app => {
+          this.app = app;
+        }}
+      >
+        <Route
+          basename={'/'}
+          render={({location}) => (
+            <Switch key={location.key} location={location}>
+              <Route
+                exact
+                path={`${process.env.PUBLIC_URL}/`}
+                component={Home}
+                key={location.key}
+              />
+              <Route
+                path={`${process.env.PUBLIC_URL}/results/:q`}
+                component={Results}
+                key={location.key}
+              />
+              <Route
+                path={`${process.env.PUBLIC_URL}/show/:id`}
+                component={Details}
+                key={location.key}
+              />
+            </Switch>
+          )}
+        />
       </div>
     );
   }

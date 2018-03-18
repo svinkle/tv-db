@@ -2,7 +2,7 @@
   "name": "tv-db",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://svinkle.github.io/tv-db/",
+  "homepage": "https://tv-db.net/",
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.1",
@@ -18,8 +18,10 @@
     "build": "npm run build-css && react-scripts build && npm run autoprefixer",
     "start-js": "react-scripts start",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "autoprefixer": "postcss build/static/css/*.css --use autoprefixer -o build/static/css/*.css",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "autoprefixer":
+      "postcss build/static/css/*.css --use autoprefixer -o build/static/css/*.css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
