@@ -14,6 +14,12 @@ class Results extends Component {
   constructor() {
     super();
 
+    // The container to receive focus on page load
+    this.container = React.createRef();
+
+    // Bind the custom method(s) to the class
+    this.fetchShowData = this.fetchShowData.bind(this);
+
     // Set the initial component state
     this.state = {
       loading: true,
@@ -21,9 +27,6 @@ class Results extends Component {
       q: null,
       announcementMessage: null
     };
-
-    // Bind the custom method(s) to the class
-    this.fetchShowData = this.fetchShowData.bind(this);
   }
 
   componentDidMount() {
@@ -47,7 +50,7 @@ class Results extends Component {
    */
   fetchShowData(q) {
 
-    // Timeout to allow sweet batman loading gif to run at least once 😎
+    // Timeout to allow old school TV loading gif to run for a bit 😎
     setTimeout(() => {
 
       // Use the new `fetch()` API to go and grab some data
@@ -72,7 +75,7 @@ class Results extends Component {
           // Set focus to the content container after the data has been fetched
           // Note: this happens _after_ setting the `loading` state property,
           // so the loading screen will be gone by this point
-          this.container.focus();
+          this.container.current.focus();
 
           // Ensure the viewport returns to the top of the document window
           window.scrollTo(0, 0);
@@ -90,18 +93,13 @@ class Results extends Component {
 
     return (
       <div
-        className="container"
         aria-labelledby="pageTitle"
+        className="container"
+        ref={this.container}
+        role="region"
         tabIndex="-1"
-        ref={container => {
-          this.container = container;
-        }}
       >
         <Header />
-        {/*
-          Announce any changes to the `announcementMessage` state property
-        */}
-        <Announcements message={this.state.announcementMessage} />
 
         <main className="main">
           <h1 id="pageTitle" className="heading heading--1">
@@ -123,6 +121,11 @@ class Results extends Component {
         </main>
 
         <Footer />
+
+        {/*
+          Announce any changes to the `announcementMessage` state property
+        */}
+        <Announcements message={this.state.announcementMessage} />
       </div>
     );
   }

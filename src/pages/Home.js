@@ -13,8 +13,11 @@ class Home extends Component {
   constructor() {
     super();
 
+    // The container to receive focus on page load
+    this.container = React.createRef();
+
     // An array of show `id`s which is used to populate the homepage
-    this.watching = [526, 587, 431, 82, 73, 83, 582, 379, 538];
+    this.watching = [526, 587, 431, 82, 73, 83, 582, 107, 994];
   }
 
   componentDidMount() {
@@ -23,7 +26,7 @@ class Home extends Component {
     document.title = 'TV-Db';
 
     // Set focus to the content container
-    this.container.focus();
+    this.container.current.focus();
 
     // Ensure the viewport returns to the top of the document window
     window.scrollTo(0, 0);
@@ -32,12 +35,11 @@ class Home extends Component {
   render() {
     return (
       <div
-        className="container"
-        tabIndex="-1"
         aria-labelledby="pageTitle"
-        ref={container => {
-          this.container = container;
-        }}
+        className="container"
+        ref={this.container}
+        role="region"
+        tabIndex="-1"
       >
         <Header />
         <main className="main">

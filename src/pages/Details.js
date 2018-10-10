@@ -14,6 +14,9 @@ class Details extends Component {
   constructor() {
     super();
 
+    // The container to receive focus on page load
+    this.container = React.createRef();
+
     // Bind the custom method(s) to the class
     this.fetchShowData = this.fetchShowData.bind(this);
 
@@ -44,7 +47,7 @@ class Details extends Component {
     // in App.js
     const id = this.props.match.params.id;
 
-    // Timeout to allow sweet batman loading gif to run at least once 😎
+    // Timeout to allow old school TV loading gif to run for a bit 😎
     setTimeout(() => {
 
       // Use the new `fetch()` API to go and grab some data
@@ -57,14 +60,14 @@ class Details extends Component {
           // and update the `loading` property
           this.setState({loading: false, results: data});
 
-          // Update the `title` element text with the proper show name,
-          // now that we have the data available
+          // Update the `title` element text with the proper show name, via
+          // `this.state.results.name` object, now that we have the data available
           document.title = `Show Details: ${this.state.results.name} | TV-Db`;
 
           // Set focus to the content container after the data has been fetched
           // Note: this happens _after_ setting the `loading` state property,
           // so the loading screen will be gone by this point
-          this.container.focus();
+          this.container.current.focus();
 
           // Ensure the viewport returns to the top of the document window
           window.scrollTo(0, 0);
@@ -82,12 +85,11 @@ class Details extends Component {
 
     return (
       <div
-        className="container"
-        tabIndex="-1"
         aria-labelledby="pageTitle"
-        ref={container => {
-          this.container = container;
-        }}
+        className="container"
+        ref={this.container}
+        role="region"
+        tabIndex="-1"
       >
         <Header />
 
