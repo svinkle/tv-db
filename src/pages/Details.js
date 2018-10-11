@@ -34,6 +34,9 @@ class Details extends Component {
 
     // Go and get the data via `fetchShowData()` method
     this.fetchShowData();
+
+    // Ensure the viewport returns to the top of the document window
+    window.scrollTo(0, 0);
   }
 
   /**
@@ -68,9 +71,6 @@ class Details extends Component {
           // Note: this happens _after_ setting the `loading` state property,
           // so the loading screen will be gone by this point
           this.container.current.focus();
-
-          // Ensure the viewport returns to the top of the document window
-          window.scrollTo(0, 0);
         });
     }, 750);
   }
