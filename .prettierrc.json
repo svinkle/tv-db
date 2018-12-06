@@ -1,7 +1,0 @@
-{
-  "arrowParens": "always",
-  "bracketSpacing": false,
-  "htmlWhitespaceSensitivity": "ignore",
-  "singleQuote": true,
-  "trailingComma": "all"
-}
