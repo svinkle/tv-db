@@ -28,11 +28,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.4.2",
-    "eslint": "^5.9.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "gh-pages": "^2.0.1",
     "normalize.css": "^8.0.1",
     "postcss-cli": "^6.0.1",
     "react-html-parser": "^2.0.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
