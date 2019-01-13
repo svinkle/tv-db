@@ -24,3 +24,7 @@ Run `npm run build` to build the project. The builds the site and will be stored
 ### Site data
 
 Data, images, and content via [TVMaze API](https://tvmaze.com/api).
+
+## License
+
+This project and its source code is licensed under the [MIT](LICENSE.txt) license.
