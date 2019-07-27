@@ -4,7 +4,7 @@
 
 This repo is a demo component from the article, [Creating Accessible React Apps](https://medium.com/@svinkle/creating-accessible-react-apps-38dc1c2775cf). Have a read to find out how this app works and what makes it accessible, then come back and check out the source code. 🙂
 
-Try out the [live demo](https://tv-db.net/) for yourself!
+Try out the [live demo](https://svinkle.github.io/tv-db) for yourself!
 
 ---
 
